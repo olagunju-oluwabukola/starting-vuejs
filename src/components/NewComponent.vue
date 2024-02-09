@@ -19,6 +19,18 @@
     
 </div>
 <h2 v-show="hideElement">Using v-show</h2>
+
+<div >
+    <h2 style="font-style: italic">Array of Object</h2>
+    <h2 v-for="name in fullName" :key="name">first name: {{ name.FirstName }} last name: {{ name.lastName }}</h2>
+</div>
+
+<div v-for="movieData in movieList " :key='movieData' >
+    <h2 style="font-style: italic">Array of Aarry</h2>
+    <h2>{{ movieData.movieName }}</h2>
+
+    <h2 v-for="actor in movieData.characters" :key="actor">{{  actor }}</h2>
+</div>
 </template>
 
 <script>
@@ -42,6 +54,24 @@ export default {
              },
              background: 'color:green',
              font :50,
+             
+             fullName:[
+                {FirstName:'Grace', lastName:'Faith'},
+                {FirstName:'Loveth', lastName: 'Davids'}
+             ],
+
+             movieList:[
+                {
+                    movieName:'Abattoir',
+                    characters: ['Dele', 'Martins','Gbade']
+
+                },
+                {
+                    movieName:'Waiting for Godot',
+                    characters: ['Didi', 'Valdimir','Pozzo']
+                }
+             ]
+
             
 
 
