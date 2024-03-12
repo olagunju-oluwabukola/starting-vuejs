@@ -30,9 +30,25 @@
   background-color: gold;
   font-size: 2em;
 }
+.methods{
+  color: red;
+  text-align: center;
+}
 
+form{
+  display: block;
+  text-align: center;
+  background-color: aliceblue;
+  color: #242424;
+  width: 25em;
+  font-family: monospace;
+  line-height: 3em;
+}
 
-
+.computed{
+  text-align: center;
+  font-size: 2em;
+}
 
 
 

@@ -1,12 +1,18 @@
+<template>
+ 
+  <NewComponent />
+<Component2  title="Vuejs Tutorial" num="#1" modal="welcome..."/>
+</template>
+
+
 <script setup>
 import NewComponent from './components/NewComponent.vue'
 import Component2 from './Component2.vue'
+
+
 </script>
 
-<template>
-  <NewComponent />
-<Component2/>
-</template>
+
 
 <style scoped>
 .logo {

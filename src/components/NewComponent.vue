@@ -1,91 +1,91 @@
+
 <template>
-    <h1>{{ title }} - {{ author }}</h1>
-    <input type="text" ref="name">
-    <button @click="handleClick" >Click Me</button>
-    <button v-bind:open="isDisable">Bind</button>
-    <h2 class="underline">Underline</h2>
-<h2 v-bind:class="status">Status </h2>
-<h2 v-bind:class="isPromoted && 'promoted'">Promoted movie</h2>
-<h2 v-bind:class="isSoldOut ? 'soldout' : 'new'" >Sold out? movie</h2>
-<h2 v-bind:style="dangerStyle">Danger style</h2>
-<h2 v-bind:style="background">Success Style</h2>
-<h2  class="gold" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, modi?</h2>
-<div>
-    <h2 v-if="num===0">Number is Zero</h2>
-    <h2 v-else-if="num > 0"> It is a positive number😘</h2>
-    <h2 v-else-if="num < 0">It is a negative number😡</h2>
-    <h2 v-else> Number is a negative</h2>
     
-    
-</div>
-<h2 v-show="hideElement">Using v-show</h2>
-
-<div >
-    <h2 style="font-style: italic">Array of Object</h2>
-    <h2 v-for="name in fullName" :key="name">first name: {{ name.FirstName }} last name: {{ name.lastName }}</h2>
-</div>
-
-<div v-for="movieData in movieList " :key='movieData' >
-    <h2 style="font-style: italic">Array of Aarry</h2>
-    <h2>{{ movieData.movieName }}</h2>
-
-    <h2 v-for="actor in movieData.characters" :key="actor">{{  actor }}</h2>
-</div>
 </template>
 
+<!--
+<template>
+    <h2> My FullName is {{ firstName }} {{ lastName }}</h2>
+    <h2> computed {{ fullName }}</h2>
+
+    <button @click="changeName">Change name </button>
+    <h2 v-for="item in items" key="id">{{ item.fruit }} {{ item.snacks }}</h2>
+    <h2>{{ total }}</h2>
+    <button  @click="itemsPrice.push({id:4, item:'choco', price:400})">Add to Cart</button>
+
+ 
+        <h2 v-for="items in expensiveItems" key="items.id">{{ items.item }} {{ items. price }}</h2>
+   
+</template>
+
+
 <script>
-export default {
+export default{
+    name: '',
     data(){
         return{
-            num: 0,
-            hideElement:true,
-            name: 'app',
-            title: 'My First Vue App',
-            author : 'Me',
-            isDisable: false,
-            isPromoted: true,
-            status: 'success',
-            isSoldOut: true,
-            style: 'gold',
-             dangerStyle:{
-                color: 'red',
-                'font-size': '2em'
-            
-             },
-             background: 'color:green',
-             font :50,
-             
-             fullName:[
-                {FirstName:'Grace', lastName:'Faith'},
-                {FirstName:'Loveth', lastName: 'Davids'}
-             ],
+            firstName: 'Bruce',
+            lastName: 'Lee',
+            items:[
+                {fruit: 'mango',},
+                {snacks: 'oats'}
 
-             movieList:[
+
+            ],
+
+            itemsPrice:[
                 {
-                    movieName:'Abattoir',
-                    characters: ['Dele', 'Martins','Gbade']
-
+                    id: 1,
+                    item: 'Milk',
+                    price: 600
                 },
                 {
-                    movieName:'Waiting for Godot',
-                    characters: ['Didi', 'Valdimir','Pozzo']
+                    id: 2,
+                    item: 'Books',
+                    price: 500
+                },
+                {
+                    id:3,
+                    item:'Fruits',
+                    price:400
                 }
-             ]
-
-            
-
+            ]
 
         }
     },
-    methods: {
-        handleClick(){
-            console.log('clicked')
-        }
+    methods:{},
+    computed: {
+
+        changeName(){
+            return this.fullName ='kent clark'
+
+        },
+        fullName: {
+            get(){
+                return `${this.firstName} ${this.lastName}`
+            },
+            Set(value){
+                const name = value.split('')
+                this.firstName = name[0]
+                this.lastName= name[1]
+
+            }
+        
+
+        },
+       total(){
+       return this.itemsPrice.reduce((total, curr) => (total= total + curr.price), 0)
+       },
+
+       expensiveItems(){
+        return this.itemsPrice.filter(itemsPrice => itemsPrice.price > 400)
+       }
     }
 }
 
 </script>
 
-<style scoped>
+<style>
 
 </style>
+-->
